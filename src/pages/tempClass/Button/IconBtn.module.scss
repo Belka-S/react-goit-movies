@@ -1,0 +1,25 @@
+.IconBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  margin: 0;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  fill: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  font: inherit;
+  transition: fill 250ms, border-color 250ms;
+
+  &:hover,
+  &:focus {
+    fill: tomato;
+  }
+}

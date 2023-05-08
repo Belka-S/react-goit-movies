@@ -1,0 +1,52 @@
+# **React**[https://react.dev/]
+
+- **[github]** https://github.com/Belka-S?tab=repositories
+- **[goit]** https://www.edu.goit.global/uk/learn/6420780/31183/31219/textbook
+- **[reactrouter]**https://reactrouter.com/en/main
+- **[prop-types]**https://github.com/facebook/prop-types
+- **[styled-components]**https://styled-components.com/docs/basics
+- **[react-icons]**https://react-icons.github.io/react-icons/
+- **[axios]**https://axios-http.com/docs/intro
+- **[date-fns]**https://date-fns.org
+- **[nanoid]**https://github.com/ai/nanoid/
+- **[classnames]**https://github.com/JedWatson/classnames
+- **[formik]**https://formik.org/docs/overview
+- **[react-hook-form]**https://www.react-hook-form.com/get-started
+- **[react-tabs]**https://github.com/reactjs/react-tabs
+- **[react-select]**https://react-select.com/home
+- **[debounce-input]**https://github.com/nkbt/react-debounce-input
+- **[yup]**https://github.com/jquense/yup
+- **[yup-phone]**https://yup-phone.js.org
+- **[react-modal]**https://github.com/reactjs/react-modal
+- **[typefaces]**https://github.com/KyleAMathews/typefaces/tree/master/packages
+- **[webfontloader]**https://github.com/typekit/webfontloader
+- **[react-player]**https://github.com/CookPete/react-player
+- **[react-hot-toast]**https://react-hot-toast.com/
+- **[infinite-scroll]**https://github.com/danbovey/react-infinite-scroller
+- **[mockapi]**https://mockapi.io/projects
+- **[loader-spinner]**https://mhnpd.github.io/react-loader-spinner/docs/components/oval
+- **[content-loader]**https://github.com/danilowoz/react-content-loader
+- **[react-query]**https://tanstack.com/query/latest/docs/react/overview
+- **[react-use]**https://github.com/streamich/react-use#readme
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[]**
+- **[react-homework-template]**https://github.com/goitacademy/react-homework-template
+- **[dependencies]**{ "@testing-library/jest-dom": "^5.16.3",
+  "@testing-library/react": "^12.1.4", "@testing-library/user-event": "^13.5.0",
+  "react": "^18.1.0", "react-dom": "^18.1.0", "react-scripts": "5.0.1",
+  "web-vitals": "^2.1.3" }
