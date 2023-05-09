@@ -1,16 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
 
-const Home = () => {
+const Movies = () => {
   const location = useLocation();
-  const movies = ['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5'];
+  const movies = ['movie-6', 'movie-7', 'movie-8', 'movie-9'];
 
   return (
     <main>
-      <h2>Tranding Today</h2>
+      <div>Serch Form</div>
       <ul>
         {movies.map(el => (
           <li key={el}>
-            <Link to={`movies/${el}`} state={{ from: location }}>
+            <Link to={el} state={{ from: location }}>
               {el}
             </Link>
           </li>
@@ -20,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Movies;
