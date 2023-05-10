@@ -5,17 +5,19 @@ export const getMovieId = pathname => {
 };
 
 export const normalaizePopularMovies = data =>
-  data.map(({ id, title }) => ({
+  data.map(({ id, title, release_date }) => ({
     id,
     title,
+    year: release_date.substring(0, 4),
   }));
 
 export const normalaizeQueryMovies = data =>
   data
     .filter(({ original_language }) => original_language === 'en')
-    .map(({ id, title }) => ({
+    .map(({ id, title, release_date }) => ({
       id,
       title,
+      year: release_date.substring(0, 4),
     }));
 
 export const normalaizeMovieData = ({

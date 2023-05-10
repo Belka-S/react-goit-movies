@@ -3,7 +3,7 @@ export const MovieInfo = ({ details }) => {
 
   return (
     <div style={{ display: 'flex' }}>
-      <img src={poster} width="250" alt="poster" />
+      <img src={poster} width="250" alt="poster"></img>
       <div style={{ padding: '20px' }}>
         <h2>
           {title} ({year})

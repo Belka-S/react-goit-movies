@@ -42,10 +42,10 @@ const Movies = () => {
         <button type="submit">Search</button>
       </form>
       <ul>
-        {movies.map(el => (
-          <li key={el.id}>
-            <Link to={`${el.id}`} state={{ from: location, movieId: el.id }}>
-              {el.title}
+        {movies.map(({ title, id, year }) => (
+          <li key={id}>
+            <Link to={`${id}`} state={{ from: location, movieId: id }}>
+              {`${title} (${year})`}
             </Link>
           </li>
         ))}

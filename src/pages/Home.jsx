@@ -25,13 +25,10 @@ const Home = () => {
     <main>
       <h2>Tranding Today</h2>
       <ul>
-        {movies.map(el => (
-          <li key={el.id}>
-            <Link
-              to={`movies/${el.id}`}
-              state={{ from: location, movieId: el.id }}
-            >
-              {el.title}
+        {movies.map(({ title, id, year }) => (
+          <li key={id}>
+            <Link to={`movies/${id}`} state={{ from: location, movieId: id }}>
+              {`${title} (${year})`}
             </Link>
           </li>
         ))}
