@@ -1,17 +1,37 @@
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { fetchPopularMovies } from 'servises/movieApi';
+import { normalaizePopularMovies } from 'servises/normalize';
+import { useState } from 'react';
 
 const Home = () => {
   const location = useLocation();
-  const movies = ['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5'];
+  const [movies, setMovies] = useState([]);
+  // const movies = ['movie-01', 'movie-02', 'movie-03', 'movie-04', 'movie-05'];
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function fetch() {
+      const popularMovies = await fetchPopularMovies(controller.signal);
+      const normalPopularMovies = normalaizePopularMovies(popularMovies);
+      setMovies(normalPopularMovies);
+    }
+    fetch();
+
+    return () => controller.abort();
+  }, []);
 
   return (
     <main>
       <h2>Tranding Today</h2>
       <ul>
         {movies.map(el => (
-          <li key={el}>
-            <Link to={`movies/${el}`} state={{ from: location }}>
-              {el}
+          <li key={el.id}>
+            <Link
+              to={`movies/${el.id}`}
+              state={{ from: location, movieId: el.id }}
+            >
+              {el.title}
             </Link>
           </li>
         ))}

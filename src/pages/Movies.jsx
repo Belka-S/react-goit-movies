@@ -1,17 +1,51 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { fetchQueryMovies } from 'servises/movieApi';
+import { normalaizeQueryMovies } from 'servises/normalize';
 
 const Movies = () => {
   const location = useLocation();
-  const movies = ['movie-6', 'movie-7', 'movie-8', 'movie-9'];
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [movies, setMovies] = useState([]);
+  // const movies = ['movie-6', 'movie-7', 'movie-8', 'movie-9'];
+  const handleSearch = e => {
+    e.preventDefault();
+
+    setSearchParams({ search: searchQuery });
+    setSearchQuery('');
+  };
+
+  useEffect(() => {
+    const conttroller = new AbortController();
+
+    async function fetch() {
+      const query = searchParams.get('search');
+      const searchResalts = await fetchQueryMovies(query, conttroller.signal);
+      const normSearchResults = normalaizeQueryMovies(searchResalts);
+      setMovies(normSearchResults);
+    }
+    fetch();
+
+    return () => conttroller.abort();
+  }, [searchParams]);
 
   return (
     <main>
-      <div>Serch Form</div>
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+          name="search"
+          onChange={e => setSearchQuery(e.target.value)}
+          value={searchQuery}
+        />
+        <button type="submit">Search</button>
+      </form>
       <ul>
         {movies.map(el => (
-          <li key={el}>
-            <Link to={el} state={{ from: location }}>
-              {el}
+          <li key={el.id}>
+            <Link to={`${el.id}`} state={{ from: location, movieId: el.id }}>
+              {el.title}
             </Link>
           </li>
         ))}

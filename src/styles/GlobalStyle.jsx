@@ -15,7 +15,7 @@ body {
   letter-spacing: 0.02em;
   line-height: 1.5;
   color: #000000;
-  background-color: #dbe4ed;
+  background-color: #dfe4ea;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

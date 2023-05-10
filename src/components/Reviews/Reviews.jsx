@@ -1,5 +1,41 @@
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { fetchMovieReviews } from 'servises/movieApi';
+import { getMovieId, normalizeReviews } from 'servises/normalize';
+
 const Reviews = () => {
-  return <div>Reviews Info</div>;
+  const [reviews, setReviews] = useState([]);
+  const [isReviews, setIsReviews] = useState(false);
+  const location = useLocation();
+  const movieId = getMovieId(location.pathname);
+
+  useEffect(() => {
+    return () => {
+      async function fetch() {
+        const movieReviews = await fetchMovieReviews(movieId);
+        const normReviews = normalizeReviews(movieReviews.results);
+        setReviews(normReviews);
+        setIsReviews(normReviews.length > 0);
+      }
+      fetch();
+    };
+  }, [movieId]);
+  return (
+    <>
+      {!isReviews ? (
+        <p>We don't have any reviews for this movie.</p>
+      ) : (
+        <ul>
+          {reviews.map(({ author, content }) => (
+            <li key={author}>
+              <h4>{author}</h4>
+              <p>{content}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
+  );
 };
 
 export default Reviews;

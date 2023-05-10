@@ -6,7 +6,7 @@ export const DivWrap = styled.div`
   padding-left: 10px;
   position: relative;
   line-height: 1.3;
-  background-color: #dbe4ed;
+  background-color: transparent;
 
   @media screen and (min-width: 320px) {
     // max-width: 300px;
@@ -34,6 +34,7 @@ export const Header = styled.header`
   justify-content: space-between;
   gap: 12px;
   padding: 8px 0;
+  background-color: #dfe4ea;
 
   & nav {
     /* margin-left: auto; */
