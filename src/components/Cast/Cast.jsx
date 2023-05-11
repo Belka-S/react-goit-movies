@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { fetchMovieCredits } from 'servises/movieApi';
-import { getMovieId, normalizeMovieCast } from 'servises/normalize';
+import { normalizeMovieCast } from 'servises/normalize';
 import css from 'styles/AllStyles.module.scss';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
-  const location = useLocation();
-  const movieId = getMovieId(location.pathname);
+  const { movieId } = useParams();
 
   useEffect(() => {
     const controller = new AbortController();

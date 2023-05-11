@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'servises/movieApi';
-import { getMovieId, normalizeReviews } from 'servises/normalize';
+import { normalizeReviews } from 'servises/normalize';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [isReviews, setIsReviews] = useState(false);
-  const location = useLocation();
-  const movieId = getMovieId(location.pathname);
+  const { movieId } = useParams();
 
   useEffect(() => {
     return () => {

@@ -1,9 +1,3 @@
-export const getMovieId = pathname => {
-  const trash = ['movies', 'reviews', 'cast', '/'];
-
-  return trash.reduce((acc, el) => acc.replaceAll(el, ''), pathname);
-};
-
 export const normalaizePopularMovies = data =>
   data.map(({ id, title, release_date }) => ({
     id,

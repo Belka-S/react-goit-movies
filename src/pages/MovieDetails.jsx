@@ -1,17 +1,14 @@
 import { Suspense, useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMovieDetails } from 'servises/movieApi';
-import { normalaizeMovieData, getMovieId } from 'servises/normalize';
+import { normalaizeMovieData } from 'servises/normalize';
 import { MovieInfo } from 'components/MovieDetails/MovieInfo';
 
 const MovieDetails = () => {
   const location = useLocation();
   const backPath = useRef(location.state?.from ?? '/');
   const [details, setDetails] = useState({});
-  const movieId = getMovieId(location.pathname);
-  // Don't work
-  const { Id } = useParams();
-  console.log(Id); // undefined ????
+  const { movieId } = useParams();
 
   useEffect(() => {
     const conttroller = new AbortController();
