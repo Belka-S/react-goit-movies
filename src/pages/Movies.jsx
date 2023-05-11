@@ -17,10 +17,12 @@ const Movies = () => {
   };
 
   useEffect(() => {
+    const query = searchParams.get('search');
+    if (query === '') return;
+
     const conttroller = new AbortController();
 
     async function fetch() {
-      const query = searchParams.get('search');
       const searchResalts = await fetchQueryMovies(query, conttroller.signal);
       const normSearchResults = normalaizeQueryMovies(searchResalts);
       setMovies(normSearchResults);
