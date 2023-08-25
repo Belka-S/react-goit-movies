@@ -8,7 +8,7 @@ import { AppMovieFinder } from 'components/App/AppMovieFinder.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyle />
-    <BrowserRouter basename="/goit-react-hw-05-movies">
+    <BrowserRouter basename="/react-goit-movies">
       <AppMovieFinder />
     </BrowserRouter>
   </React.StrictMode>
